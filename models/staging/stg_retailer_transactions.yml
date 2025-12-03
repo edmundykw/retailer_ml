@@ -5,32 +5,46 @@ models:
     description: "Staging model that canonicalizes and parses fields from the base retailer transactions."
     columns:
       - name: InvoiceDate
-        description: "Canonical invoice date (parsed substring)"
+        description: '{{ doc("invoice_date") }}'
         tests:
           - not_null
       - name: InvoiceMonth
-        description: "Derived invoice month"
+        description: '{{ doc("invoice_month") }}'
+        tests:
+          - not_null
       - name: InvoiceYear
-        description: "Derived invoice year"
+        description: '{{ doc("invoice_year") }}'
+        tests:
+          - not_null
       - name: RawInvoiceDate
-        description: "Raw invoice date as present in base table"
+        description: '{{ doc("raw_invoice_date") }}'
+        tests:
+          - not_null
       - name: InvoiceNo
-        description: "Invoice number"
+        description: '{{ doc("invoice_no") }}'
         tests:
           - not_null
       - name: StockCode
-        description: "Product stock code"
+        description: '{{ doc("stock_code") }}'
         tests:
           - not_null
       - name: Description
-        description: "Product description"
+        description: '{{ doc("description") }}'
+        tests:
+          - not_null
       - name: Quantity
-        description: "Quantity of the item"
+        description: '{{ doc("quantity") }}'
         tests:
           - not_null
       - name: UnitPrice
-        description: "Unit price of the item"
+        description: '{{ doc("unit_price") }}'
+        tests:
+          - not_null
       - name: CustomerID
-        description: "Customer identifier (COALESCE applied in model)"
+        description: '{{ doc("customer_id") }}'
+        tests:
+          - not_null
       - name: Country
-        description: "Customer country"
+        description: '{{ doc("country") }}'
+        tests:
+          - not_null

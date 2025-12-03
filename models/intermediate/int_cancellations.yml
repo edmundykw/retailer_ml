@@ -2,33 +2,49 @@ version: 2
 
 models:
   - name: int_cancellations
-    description: "Interim table containing cancellation transactions extracted from staging."
+    description: "Intermediate table containing cancellation transactions extracted from staging."
     columns:
       - name: InvoiceDate
-        description: "Parsed/canonical invoice date for the cancellation"
+        description: '{{ doc("invoice_date") }}'
         tests:
           - not_null
       - name: InvoiceMonth
-        description: "Month component of the invoice date"
+        description: '{{ doc("invoice_month") }}'
+        tests:
+          - not_null
       - name: InvoiceYear
-        description: "Year component of the invoice date"
+        description: '{{ doc("invoice_year") }}'
+        tests:
+          - not_null
       - name: RawInvoiceDate
-        description: "Original invoice date string from source"
+        description: '{{ doc("raw_invoice_date") }}'
+        tests:
+          - not_null
       - name: InvoiceNo
-        description: "Invoice number (cancellation invoices start with 'C')"
+        description: '{{ doc("invoice_no") }}'
         tests:
           - not_null
       - name: StockCode
-        description: "Product stock code"
+        description: '{{ doc("stock_code") }}'
+        tests:
+          - not_null
       - name: Description
-        description: "Product description"
+        description: '{{ doc("description") }}'
+        tests:
+          - not_null
       - name: Quantity
-        description: "Absolute quantity of cancelled items"
+        description: '{{ doc("quantity") }}'
         tests:
           - not_null
       - name: UnitPrice
-        description: "Unit price of the item"
+        description: '{{ doc("unit_price") }}'
+        tests:
+          - not_null
       - name: CustomerID
-        description: "Customer identifier (0 when missing)"
+        description: '{{ doc("customer_id") }}'
+        tests:
+          - not_null
       - name: Country
-        description: "Customer country"
+        description: '{{ doc("country") }}'
+        tests:
+          - not_null

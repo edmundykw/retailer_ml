@@ -5,26 +5,34 @@ models:
     description: "Raw base transactions pulled from the `raw.raw_online_retail` source (seed)."
     columns:
       - name: InvoiceNo
-        description: "Invoice number for the transaction"
+        description: '{{ doc("invoice_no") }}'
         tests:
           - not_null
       - name: StockCode
-        description: "Product stock code"
+        description: '{{ doc("stock_code") }}'
         tests:
           - not_null
       - name: Description
-        description: "Product description"
+        description: '{{ doc("description") }}'
+        tests:
+          - not_null
       - name: Quantity
-        description: "Quantity ordered (may be negative for cancellations)"
+        description: '{{ doc("quantity") }}'
         tests:
           - not_null
       - name: InvoiceDate
-        description: "Original invoice date string from the source"
+        description: '{{ doc("invoice_date") }}'
         tests:
           - not_null
       - name: UnitPrice
-        description: "Unit price of the item"
+        description: '{{ doc("unit_price") }}'
+        tests:
+          - not_null
       - name: CustomerID
-        description: "Customer identifier (may be NULL in source)"
+        description: '{{ doc("customer_id") }}'
+        tests:
+          - not_null
       - name: Country
-        description: "Country of the customer"
+        description: '{{ doc("country") }}'
+        tests:
+          - not_null
