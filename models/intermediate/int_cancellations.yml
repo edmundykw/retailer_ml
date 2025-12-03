@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: int_cancellations
+    description: "Interim table containing cancellation transactions extracted from staging."
+    columns:
+      - name: InvoiceDate
+        description: "Parsed/canonical invoice date for the cancellation"
+        tests:
+          - not_null
+      - name: InvoiceMonth
+        description: "Month component of the invoice date"
+      - name: InvoiceYear
+        description: "Year component of the invoice date"
+      - name: RawInvoiceDate
+        description: "Original invoice date string from source"
+      - name: InvoiceNo
+        description: "Invoice number (cancellation invoices start with 'C')"
+        tests:
+          - not_null
+      - name: StockCode
+        description: "Product stock code"
+      - name: Description
+        description: "Product description"
+      - name: Quantity
+        description: "Absolute quantity of cancelled items"
+        tests:
+          - not_null
+      - name: UnitPrice
+        description: "Unit price of the item"
+      - name: CustomerID
+        description: "Customer identifier (0 when missing)"
+      - name: Country
+        description: "Customer country"

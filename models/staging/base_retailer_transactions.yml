@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: base_retailer_transactions
+    description: "Raw base transactions pulled from the `raw.raw_online_retail` source (seed)."
+    columns:
+      - name: InvoiceNo
+        description: "Invoice number for the transaction"
+        tests:
+          - not_null
+      - name: StockCode
+        description: "Product stock code"
+        tests:
+          - not_null
+      - name: Description
+        description: "Product description"
+      - name: Quantity
+        description: "Quantity ordered (may be negative for cancellations)"
+        tests:
+          - not_null
+      - name: InvoiceDate
+        description: "Original invoice date string from the source"
+        tests:
+          - not_null
+      - name: UnitPrice
+        description: "Unit price of the item"
+      - name: CustomerID
+        description: "Customer identifier (may be NULL in source)"
+      - name: Country
+        description: "Country of the customer"
