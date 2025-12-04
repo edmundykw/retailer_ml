@@ -58,3 +58,24 @@ Derived invoice month
 {% docs invoice_year %}
 Derived invoice year
 {% enddocs %}
+
+{% docs total_cancelled_value %}
+Total value of the canclled order
+{% enddocs %}
+
+{% docs total_order_value %}
+Total value of the order for the invoice
+{% enddocs %}
+
+{% docs month_num %}
+Two-digit month number as a string ("01" through "12").
+{% enddocs %}
+
+{% docs total_month_order_value %}
+Total order value aggregated for the month (rounded to 2 decimal places).
+{% enddocs %}
+
+{% docs rolling_3_month_avg_order_value %}
+Three-month rolling average of monthly order value for a customer within a year (rounded to 2 decimals).
+Computed over the current month and the two preceding months.
+{% enddocs %}

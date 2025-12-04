@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: agg_monthly_orders
+    description: "Aggregated monthly order totals joined to a months dimension (01-12)."
+    columns:
+      - name: month_num
+        description: '{{ doc("month_num") }}'
+        tests:
+          - not_null
+      - name: InvoiceMonth
+        description: '{{ doc("invoice_month") }}'
+        tests:
+          - not_null
+      - name: InvoiceYear
+        description: '{{ doc("invoice_year") }}'
+        tests:
+          - not_null
+      - name: CustomerID
+        description: '{{ doc("customer_id") }}'
+        tests:
+          - not_null
+      - name: Country
+        description: '{{ doc("country") }}'
+        tests:
+          - not_null
+      - name: TotalMonthOrderValue
+        description: '{{ doc("total_month_order_value") }}'
+        tests:
+          - not_null
+      - name: Rolling3MonthAvgOrderValue
+        description: '{{ doc("rolling_3_month_avg_order_value") }}'
+        tests:
+          - not_null

@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: int_orders
+    description: "Interim orders table with computed order values from staging."
+    columns:
+      - name: InvoiceDate
+        description: '{{ doc("invoice_date") }}'
+        tests:
+          - not_null
+      - name: InvoiceMonth
+        description: '{{ doc("invoice_month") }}'
+        tests:
+          - not_null
+      - name: InvoiceYear
+        description: '{{ doc("invoice_year") }}'
+        tests:
+          - not_null
+      - name: RawInvoiceDate
+        description: '{{ doc("raw_invoice_date") }}'
+        tests:
+          - not_null
+      - name: InvoiceNo
+        description: '{{ doc("invoice_no") }}'
+        tests:
+          - not_null
+      - name: StockCode
+        description: '{{ doc("stock_code") }}'
+        tests:
+          - not_null
+      - name: Description
+        description: '{{ doc("description") }}'
+        tests:
+          - not_null
+      - name: Quantity
+        description: '{{ doc("quantity") }}'
+        tests:
+          - not_null
+      - name: UnitPrice
+        description: '{{ doc("unit_price") }}'
+        tests:
+          - not_null
+      - name: TotalOrderValue
+        description: '{{ doc("total_order_value") }}'
+        tests:
+          - not_null
+      - name: CustomerID
+        description: '{{ doc("customer_id") }}'
+        tests:
+          - not_null
+      - name: Country
+        description: '{{ doc("country") }}'
+        tests:
+          - not_null

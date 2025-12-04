@@ -7,8 +7,9 @@ SELECT
     InvoiceNo,
     StockCode,
     Description,
-    ABS(Quantity) AS Quantity,
+    Quantity,
     UnitPrice,
+    ROUND(Quantity * UnitPrice, 2) AS TotalCancelledValue,
     CustomerID,
     Country
 FROM {{ref('stg_retailer_transactions')}}
